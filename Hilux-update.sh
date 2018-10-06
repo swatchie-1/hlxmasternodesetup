@@ -27,9 +27,9 @@ echo -e "${YELLOW}Hilux Update Script v0.1${NC}"
 
 #KILL THE MFER
 echo -e "${YELLOW}Killing deamon...${NC}"
-    hulix-cli stop
-    pkill hilux
-    delay 20
+hulix-cli stop
+pkill hilux
+delay 20
 
 #Delete .hiluxcore contents 
 echo -e "${YELLOW}Scrapping .hiluxcore...${NC}"
