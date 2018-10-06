@@ -33,7 +33,7 @@ function delay { echo -e "${GREEN}Sleep for $1 seconds...${NC}"; sleep "$1"; }
 function stop_daemon {
     if pgrep -x 'hiluxd' > /dev/null; then
         echo -e "${YELLOW}Attempting to stop hiluxd${NC}"
-        Hilux-cli stop
+        hilux-cli stop
         delay 30
         if pgrep -x 'hiluxd' > /dev/null; then
             echo -e "${RED}hiluxd daemon is still running!${NC} \a"
@@ -208,7 +208,7 @@ EOF
 
     #Generate masternode private key
     echo -e "${YELLOW}Generating masternode private key...${NC}"
-    genkey=$(Hilux-cli masternode genkey)
+    genkey=$(hilux-cli masternode genkey)
     if [ -z "$genkey" ]; then
         echo -e "${RED}ERROR: Can not generate masternode private key.${NC} \a"
         echo -e "${RED}ERROR:${YELLOW}Reboot VPS and try again or supply existing genkey as a parameter.${NC}"
@@ -338,7 +338,7 @@ echo -e "${NC}-------------------------------------------------
 NOTE: To edit Hilux.conf, first stop the hiluxd daemon,
 then edit the Hilux.conf file and save it in nano: (Ctrl-X + Y + Enter),
 then start the hiluxd daemon back up:
-to stop:   ${YELLOW}Hilux-cli stop${NC}
+to stop:   ${YELLOW}hilux-cli stop${NC}
 to edit:   ${YELLOW}nano ~/.hiluxcore/Hilux.conf${NC}
 to start:  ${YELLOW}hiluxd${NC}
 ========================================================================
