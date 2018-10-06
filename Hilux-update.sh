@@ -47,6 +47,7 @@ sudo rm -rf ~/usr/bin/hilux*
 echo -e "${YELLOW}Installing v1.0.1...${NC}"
 cd ~
 mkdir hilux
+cd hilux
 wget $COIN_TGZ
 tar xzf $COIN_ZIP >/dev/null 2>&1 
 rm -r $COIN_ZIP >/dev/null 2>&1
