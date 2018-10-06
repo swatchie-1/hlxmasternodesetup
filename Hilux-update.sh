@@ -71,9 +71,7 @@ echo -ne '[###################] (100%)\r'
 echo -ne '\n'
 
 echo -e "${GREEN}Your masternode is now up to date${NC}"
-echo '==========================================================================='
-echo 'Masternode Information:' && hilux-cli getinfo
-echo '==========================================================================='
-echo 'Masternode Status:' && hilux-cli masternode status
-echo '==========================================================================='
+echo ==========================================================
+# Run nodemon.sh
+nodemon.sh
 # EOF
