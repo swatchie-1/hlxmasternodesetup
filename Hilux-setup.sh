@@ -73,7 +73,7 @@ else
 fi
 
 # update packages and upgrade Ubuntu
-echo -e "${YELLOW}Updating packages and Unbuntu...${NC}
+echo -e "${YELLOW}Updating packages and Unbuntu...${NC}"
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get -y autoremove
