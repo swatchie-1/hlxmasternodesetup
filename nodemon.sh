@@ -1,24 +1,19 @@
 #!/bin/bash
-# Eswede nodemon 1.1 - hilux Masternode Monitoring
+# Nodemon 1.1 - Hilux Masternode Monitoring
 #If you find this script helpful
-# ...please donate to the devfound: BTNX  **BMEfHRvfcwoPgpBgpEVERsQpipNjtFVgVL**
+# ...please donate to the devfound: BTNX  **VCjuD2vGBvX3x45AfM3KsT2YQegbJmsa5f **
 # or BTC to **3H1JNkydHxDbhoXLREpxXccvyNh7Awr2jX**
-
-#...please donate BTNX to the devfound: BMEfHRvfcwoPgpBgpEVERsQpipNjtFVgVL
-
-#--ESWEDE
-
 #Processing command line params
 if [ -z $1 ]; then dly=1; else dly=$1; fi   # Default refresh time is 1 sec
 
-datadir="/home/$USER/.hiluxcore$2"   # Default datadir is /root/.hiluxcore
+datadir="/$USER/.hiluxcore$2"   # Default datadir is /root/.hiluxcore
  
 # Install jq if it's not present
 dpkg -s jq 2>/dev/null >/dev/null || sudo apt-get -y install jq
 
 #It is a one-liner script for now
 watch -ptn $dly "echo '===========================================================================
-Outbound connections to other hilux nodes [hilux datadir: $datadir]
+Outbound connections to other Hilux nodes [HILUX datadir: $datadir]
 ===========================================================================
 Node IP               Ping    Rx/Tx     Since  Hdrs   Height  Time   Ban
 Address               (ms)   (KBytes)   Block  Syncd  Blocks  (min)  Score
