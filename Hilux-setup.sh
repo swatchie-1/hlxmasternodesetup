@@ -169,9 +169,9 @@ rm -rf hilux-masternode.tar.gz
 stop_daemon
 
 # Deploy binaries to /usr/bin
-sudo cp HLXmasternodesetup/hilux-masternode.tar.gz/Hilux* /usr/bin/
-sudo chmod 755 -R ~/HLXmasternodesetup
-sudo chmod 755 /usr/bin/Hilux*
+sudo cp hilux/hilux* /usr/bin/
+sudo chmod 755 -R ~/hilux
+sudo chmod 755 /usr/bin/hilux*
 
 # Deploy masternode monitoring script
 cp ~/HLXmasternodesetup/nodemon.sh /usr/local/bin
