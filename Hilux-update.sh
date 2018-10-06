@@ -1,16 +1,13 @@
 #!/bin/bash
-
-COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/swatchie-1/hilux/releases/download/v1.0.1/hilux-masternode.tar.gz'
-COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-
-#!/bin/bash
 # Hilux Update Script
 # (c) 2018 by ETS5 for Hilux Coin 
 #
 # Usage:
 # bash Hilux-update.sh 
-#
+
+COIN_PATH='/usr/local/bin/'
+COIN_TGZ='https://github.com/swatchie-1/hilux/releases/download/v1.0.1/hilux-masternode.tar.gz'
+COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 
 #Color codes
 RED='\033[0;91m'
