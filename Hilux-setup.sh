@@ -73,6 +73,7 @@ else
 fi
 
 # update packages and upgrade Ubuntu
+echo -e "${YELLOW}Updating packages and Unbuntu...${NC}
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get -y autoremove
@@ -159,6 +160,7 @@ else
 fi
 
 #Installing Daemon
+echo -e "${GREEN}Installing Daemon....${NC}"
 cd ~
 mkdir hilux
 cd hilux
@@ -217,6 +219,7 @@ EOF
     fi
     
     #Stopping daemon to create Hilux.conf
+    echo -e "${YELLOW}Stopping daemon to create Hilux.conf....${NC}"
     stop_daemon
     echo -ne '[##                 ] (15%)\r'
     sleep 6
@@ -231,6 +234,7 @@ EOF
 fi
 
 # Create Hilux.conf
+echo -e "${YELLOW}Creating Hilux.conf....${NC}"
 cat <<EOF > ~/.hiluxcore/hilux.conf
 rpcuser=$rpcuser
 rpcpassword=$rpcpassword
@@ -246,11 +250,12 @@ masternodeprivkey=$genkey
 EOF
 
 #Finally, starting HLX daemon with new Hilux.conf
+echo -e "${GREEN}Finally, starting HLX daemon with new Hilux.conf....${NC}"
 hiluxd -daemon
 delay 5
 
 # Download and install sentinel
-echo && echo "Installing Sentinel..."
+echo -e "${YELLOW}Installing Sentinel....${NC}"
 sleep 3
 cd
 sudo apt-get -y install python3-pip
@@ -265,6 +270,7 @@ export EDITOR=nano
 (crontab -l -u root 2>/dev/null; echo '* * * * * cd /root/sentinel-hilux && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1') | sudo crontab -u root -
 
 #Setting auto star cron job for hiluxd
+echo -e "${GREEN}Setting auto star cron job for hiluxd....${NC}"
 cronjob="@reboot sleep 30 && hiluxd -daemon"
 crontab -l > tempcron
 if ! grep -q "$cronjob" tempcron; then
