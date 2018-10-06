@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COIN_PATH='/usr/local/bin/'
+COIN_PATH='/usr/bin/'
 COIN_TGZ='https://github.com/swatchie-1/hilux/releases/download/v1.0.1/hilux-masternode.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 
