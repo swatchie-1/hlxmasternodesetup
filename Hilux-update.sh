@@ -28,17 +28,17 @@ echo -e "${YELLOW}Hilux Update Script v0.1${NC}"
 #KILL THE MFER
 echo -e "${YELLOW}Killing deamon...${NC}"
 function stop_daemon {
-    if pgrep -x 'xgalaxyd' > /dev/null; then
-        echo -e "${YELLOW}Attempting to stop xgalaxyd${NC}"
-        xgalaxy-cli stop
+    if pgrep -x 'hiluxd' > /dev/null; then
+        echo -e "${YELLOW}Attempting to stop hiluxd${NC}"
+        hilux-cli stop
         delay 30
-        if pgrep -x 'xgalaxy' > /dev/null; then
-            echo -e "${RED}xgalaxyd daemon is still running!${NC} \a"
+        if pgrep -x 'hilux' > /dev/null; then
+            echo -e "${RED}hiluxd daemon is still running!${NC} \a"
             echo -e "${RED}Attempting to kill...${NC}"
-            pkill xgalaxyd
+            pkill hiluxd
             delay 30
-            if pgrep -x 'xgalaxyd' > /dev/null; then
-                echo -e "${RED}Can't stop xgalaxyd! Reboot and try again...${NC} \a"
+            if pgrep -x 'hiluxd' > /dev/null; then
+                echo -e "${RED}Can't stop hiluxd! Reboot and try again...${NC} \a"
                 exit 2
             fi
         fi
