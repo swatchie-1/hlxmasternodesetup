@@ -26,6 +26,7 @@ function delay { echo -e "${GREEN}Sleep for $1 seconds...${NC}"; sleep "$1"; }
 echo -e "${YELLOW}Hilux Update Script v0.1${NC}"
 
 #KILL THE MFER
+echo -e "${YELLOW}Killing deamon...${NC}"
     hulix-cli stop
     pkill hilux
     delay 20
@@ -39,8 +40,8 @@ rm -rf c* b* w* p* n* m* f* d* g*
 #Delete OLD Binary
 echo -e "${YELLOW}Deleting v1.3...${NC}"
 cd ~
-rm -rf ~/hilux
-rm -rf ~/usr/bin/hilux*
+sudo rm -rf ~/hilux
+sudo rm -rf ~/usr/bin/hilux*
 
 #Install new Binaries
 echo -e "${YELLOW}Installing v1.0.1...${NC}"
@@ -55,6 +56,7 @@ sudo chmod 755 -R ~/hilux
 sudo chmod 755 /usr/bin/hilux*
 
 #Restarting Daemon
+echo -e "${YELLOW}Restarting Daemon...${NC}"
     hiluxd -daemon
 echo -ne '[##                 ] (15%)\r'
 sleep 6
