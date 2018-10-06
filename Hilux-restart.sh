@@ -19,9 +19,9 @@ function delay { echo -e "${GREEN}Sleep for $1 seconds...${NC}"; sleep "$1"; }
 echo -e "${YELLOW}Hilux Restart Script v0.1${NC}"
 
 #KILL THE MFER
-    hilux-cli stop
-    pkill hiluxd
-    delay 20
+hilux-cli stop
+pkill hiluxd
+delay 20
 
 #Delete .reecore contents 
 echo -e "${YELLOW}Scrapping .hiluxcore...${NC}"
