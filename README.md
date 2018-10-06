@@ -1,5 +1,4 @@
 # HLXmasternodesetup
-# HLXmasternodesetup
 
 **NOTE:** This installation guide is provided as is with no warranties of any kind.
 
