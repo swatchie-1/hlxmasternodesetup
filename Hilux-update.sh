@@ -27,9 +27,33 @@ echo -e "${YELLOW}Hilux Update Script v0.1${NC}"
 
 #KILL THE MFER
 echo -e "${YELLOW}Killing deamon...${NC}"
-hulix-cli stop
-pkill hilux
-delay 20
+function stop_daemon {
+    if pgrep -x 'xgalaxyd' > /dev/null; then
+        echo -e "${YELLOW}Attempting to stop xgalaxyd${NC}"
+        xgalaxy-cli stop
+        delay 30
+        if pgrep -x 'xgalaxy' > /dev/null; then
+            echo -e "${RED}xgalaxyd daemon is still running!${NC} \a"
+            echo -e "${RED}Attempting to kill...${NC}"
+            pkill xgalaxyd
+            delay 30
+            if pgrep -x 'xgalaxyd' > /dev/null; then
+                echo -e "${RED}Can't stop xgalaxyd! Reboot and try again...${NC} \a"
+                exit 2
+            fi
+        fi
+    fi
+}
+#Function detect_ubuntu
+
+ if [[ $(lsb_release -d) == *16.04* ]]; then
+   UBUNTU_VERSION=16
+else
+   echo -e "${RED}You are not running Ubuntu 16.04, Installation is cancelled.${NC}"
+   exit 1
+
+fi
+
 
 #Delete .hiluxcore contents 
 echo -e "${YELLOW}Scrapping .hiluxcore...${NC}"
