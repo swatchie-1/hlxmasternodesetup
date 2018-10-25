@@ -177,8 +177,8 @@ sudo chmod 755 -R ~/hilux
 sudo chmod 755 /usr/bin/hilux*
 
 # Deploy masternode monitoring script
-cp ~/HLXmasternodesetup/nodemon.sh /usr/local/bin
-sudo chmod 711 /usr/local/bin/nodemon.sh
+cp ~/HLXmasternodesetup/HLXnodemon.sh /usr/local/bin
+sudo chmod 711 /usr/local/bin/HLXnodemon.sh
 
 #Create datadir
 if [ ! -f ~/.hiluxcore/hilux.conf ]; then 
@@ -356,8 +356,8 @@ To monitor system resource utilization and running processes:
 ${YELLOW}htop${NC}
 ========================================================================
 To view the list of peer connections, status of your masternode, 
-sync status etc. in real-time, run the nodemon.sh script:
-${YELLOW}nodemon.sh${NC}
+sync status etc. in real-time, run the HLXnodemon.sh script:
+${YELLOW}HLXnodemon.sh${NC}
 or just type 'node' and hit <TAB> to autocomplete script name.
 ========================================================================
 Enjoy your Hilux Masternode and thanks for using this setup script!
@@ -366,7 +366,7 @@ If you found this script and masternode setup guide helpful...,
 or BTC to **3H1JNkydHxDbhoXLREpxXccvyNh7Awr2jX**
 Eswede
 "
-# Run nodemon.sh
-nodemon.sh
+# Run HLXnodemon.sh
+HLXnodemon.sh
 
 # EOF
